@@ -21,6 +21,9 @@ function initOceanAnimations() {
 
     // Wind effect for text elements
     initWindEffects();
+
+    // Value cards special animations
+    initValueCardAnimations();
 }
 
 // Create wave animations
@@ -139,13 +142,18 @@ function initRippleEffects() {
 
 // Floating elements animation
 function initFloatingElements() {
-    const floatingElements = document.querySelectorAll('.profile-image, .hero-credentials .credential');
+    const floatingElements = document.querySelectorAll('.profile-image, .hero-credentials .credential, .value-card');
 
     floatingElements.forEach((element, index) => {
-        const delay = index * 0.5;
-        const duration = 3 + (index * 0.3);
+        const delay = index * 0.3;
+        const duration = 4 + (index * 0.2);
 
-        element.style.animation = `float ${duration}s ease-in-out ${delay}s infinite alternate`;
+        // Add subtle floating animation for value cards
+        if (element.classList.contains('value-card')) {
+            element.style.animation = `floatGentle ${duration}s ease-in-out ${delay}s infinite alternate`;
+        } else {
+            element.style.animation = `float ${duration}s ease-in-out ${delay}s infinite alternate`;
+        }
     });
 
     const floatingStyles = `
@@ -156,6 +164,24 @@ function initFloatingElements() {
             to {
                 transform: translateY(-10px) rotate(1deg);
             }
+        }
+
+        @keyframes floatGentle {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-6px);
+            }
+        }
+
+        .value-card {
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            animation-play-state: paused;
+            transform: translateY(-8px) scale(1.02);
         }
     `;
 
@@ -189,6 +215,71 @@ function initWindEffects() {
     `;
 
     addStyles('wind-effects', windStyles);
+}
+
+// Value cards special animations
+function initValueCardAnimations() {
+    const valueCards = document.querySelectorAll('.value-card');
+
+    // Staggered entrance animation
+    const valueObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const valueSection = entry.target.closest('.value');
+                if (valueSection) {
+                    const cards = valueSection.querySelectorAll('.value-card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('value-card-animated');
+                        }, index * 150);
+                    });
+                }
+                valueObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    if (valueCards.length > 0) {
+        valueObserver.observe(valueCards[0]);
+    }
+
+    // Add CSS for value cards animation
+    const valueCardStyles = `
+        .value-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .value-card-animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .value-card.primary {
+            transform: translateY(50px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .value-card.primary.value-card-animated {
+            transform: translateY(0) scale(1);
+        }
+
+        .value-card:nth-child(1) { transition-delay: 0s; }
+        .value-card:nth-child(2) { transition-delay: 0.1s; }
+        .value-card:nth-child(3) { transition-delay: 0.2s; }
+        .value-card:nth-child(4) { transition-delay: 0.3s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .value-card {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+    `;
+
+    addStyles('value-card-animations', valueCardStyles);
 }
 
 // Text animations
