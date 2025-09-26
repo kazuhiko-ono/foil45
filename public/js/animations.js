@@ -2,10 +2,8 @@
 // Ocean-themed animations and interactive effects
 
 document.addEventListener('DOMContentLoaded', function() {
-    initOceanAnimations();
-    initTextAnimations();
-    initHoverEffects();
-    initScrollBasedAnimations();
+    // All animations disabled
+    console.log('Animations disabled');
 });
 
 // Ocean-themed animations

@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling
     initSmoothScrolling();
 
-    // Scroll-triggered animations
-    initScrollAnimations();
-
     // Mobile navigation
     initMobileNavigation();
 
     // Performance optimizations
     initPerformanceOptimizations();
+
+    // Disable all animations
+    disableAnimations();
 });
 
 // Navigation functionality
@@ -533,6 +533,62 @@ function initAccessibility() {
 
 // Initialize accessibility features
 initAccessibility();
+
+// Disable all animations function
+function disableAnimations() {
+    // Add global animation disable styles
+    const style = document.createElement('style');
+    style.textContent = `
+        *, *::before, *::after {
+            animation-duration: 0ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0ms !important;
+            transition-delay: 0ms !important;
+            scroll-behavior: auto !important;
+        }
+
+        .hero-content {
+            animation: none !important;
+        }
+
+        .hero-badge,
+        .hero-title-main,
+        .hero-title-sub,
+        .hero-description,
+        .hero-credentials,
+        .hero-cta,
+        .hero-scroll-indicator {
+            animation: none !important;
+        }
+
+        .scroll-arrow {
+            animation: none !important;
+        }
+
+        .value-card,
+        .feature-card,
+        .lifestyle-card,
+        .gallery-item {
+            opacity: 1 !important;
+            transform: none !important;
+            animation: none !important;
+        }
+
+        .profile-image,
+        .hero-credentials .credential {
+            animation: none !important;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Remove any existing animation classes
+    const animatedElements = document.querySelectorAll('.animate-on-scroll, .animated, .value-card-animated');
+    animatedElements.forEach(element => {
+        element.style.animation = 'none';
+        element.style.opacity = '1';
+        element.style.transform = 'none';
+    });
+}
 
 // Service Worker registration for PWA capabilities
 if ('serviceWorker' in navigator) {
