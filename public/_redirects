@@ -1,0 +1,33 @@
+# Netlify redirects file
+# https://docs.netlify.com/routing/redirects/
+
+# Section shortcuts
+/home              /#hero           302
+/profile           /#profile        302
+/achievements      /#achievements   302
+/sport             /#sport          302
+/value             /#value          302
+/lifestyle         /#lifestyle      302
+/gallery           /#gallery        302
+/contact           /#contact        302
+
+# Legacy URLs (if any)
+/about             /#profile        301
+/bio               /#profile        301
+/records           /#achievements   301
+/results           /#achievements   301
+/windsurfing       /#sport          301
+/training          /#lifestyle      301
+/photos            /#gallery        301
+/images            /#gallery        301
+
+# Internationalization
+/en                /index.html      302
+/jp                /index.html      302
+/ja                /index.html      302
+
+# Error handling
+/404               /index.html      404
+
+# SPA fallback - must be last
+/*                 /index.html      200

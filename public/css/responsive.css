@@ -1,0 +1,677 @@
+/* Responsive Design for Yuki Sunaga Windsurfing Site */
+
+/* Large Desktop */
+@media (max-width: 1440px) {
+    .container {
+        padding: 0 var(--spacing-xl);
+    }
+
+    .hero-title-main {
+        font-size: var(--font-size-4xl);
+    }
+
+    .hero-title-sub {
+        font-size: var(--font-size-5xl);
+    }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .profile-content {
+        grid-template-columns: 1fr 1.5fr;
+        gap: var(--spacing-3xl);
+    }
+
+    .sport-features {
+        gap: var(--spacing-lg);
+    }
+
+    .value-grid {
+        gap: var(--spacing-lg);
+    }
+
+    .lifestyle-features {
+        gap: var(--spacing-lg);
+    }
+
+    .footer-main {
+        gap: var(--spacing-2xl);
+    }
+}
+
+/* Tablet Landscape */
+@media (max-width: 1024px) {
+    :root {
+        --font-size-6xl: 3rem;
+        --font-size-5xl: 2.5rem;
+        --font-size-4xl: 2rem;
+    }
+
+    .nav-menu {
+        gap: var(--spacing-md);
+    }
+
+    .nav-link {
+        font-size: var(--font-size-xs);
+    }
+
+    .hero-credentials {
+        gap: var(--spacing-xl);
+    }
+
+    .hero-cta {
+        gap: var(--spacing-md);
+    }
+
+    .profile-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+        text-align: center;
+    }
+
+    .profile-info-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        max-width: 400px;
+        margin: 0 auto var(--spacing-xl) auto;
+    }
+
+    .story-highlights {
+        justify-content: center;
+        gap: var(--spacing-lg);
+    }
+
+    .sport-features {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .slalom-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .slalom-stats {
+        flex-direction: row;
+        gap: var(--spacing-md);
+    }
+
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-card.primary {
+        grid-column: 1;
+    }
+
+    .lifestyle-features {
+        grid-template-columns: 1fr;
+    }
+
+    .philosophy-stats {
+        gap: var(--spacing-lg);
+    }
+
+    .gallery-item.featured {
+        grid-column: span 1;
+        aspect-ratio: 4/3;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+
+    .footer-info {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
+
+/* Tablet Portrait */
+@media (max-width: 768px) {
+    :root {
+        --spacing-4xl: 4rem;
+        --spacing-3xl: 3rem;
+        --spacing-2xl: 2rem;
+    }
+
+    section {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .nav-container {
+        padding: var(--spacing-sm) var(--spacing-lg);
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        border-top: 1px solid var(--border-light);
+        box-shadow: var(--shadow-medium);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .hero-title-main {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero-title-sub {
+        font-size: var(--font-size-4xl);
+    }
+
+    .hero-description {
+        font-size: var(--font-size-base);
+    }
+
+    .hero-credentials {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: center;
+    }
+
+    .credential {
+        flex-direction: row;
+        gap: var(--spacing-lg);
+        align-items: center;
+    }
+
+    .credential-year {
+        font-size: var(--font-size-2xl);
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .section-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .achievements-timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding-left: 60px;
+    }
+
+    .timeline-item::before {
+        left: 14px;
+    }
+
+    .timeline-item.featured::before {
+        left: 11px;
+    }
+
+    .timeline-year {
+        min-width: auto;
+        text-align: left;
+        font-size: var(--font-size-lg);
+        padding-top: 0;
+    }
+
+    .timeline-content::before {
+        display: none;
+    }
+
+    .footer-info {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: left;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 640px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .hero-content {
+        padding: 0 var(--spacing-md);
+    }
+
+    .section-header {
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .profile-image {
+        max-width: 300px;
+    }
+
+    .profile-info-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .info-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-sm) 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .story-highlights {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .timeline-item {
+        padding-left: 50px;
+    }
+
+    .slalom-stats {
+        flex-direction: column;
+    }
+
+    .philosophy-stats {
+        flex-direction: column;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+    :root {
+        --spacing-4xl: 3rem;
+        --spacing-3xl: 2rem;
+        --spacing-2xl: 1.5rem;
+        --spacing-xl: 1.25rem;
+        --font-size-4xl: 1.75rem;
+        --font-size-3xl: 1.5rem;
+        --font-size-2xl: 1.25rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .nav-container {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .nav-logo {
+        font-size: var(--font-size-lg);
+    }
+
+    .hero {
+        height: 100vh;
+        min-height: 600px;
+    }
+
+    .hero-title-main {
+        font-size: var(--font-size-2xl);
+    }
+
+    .hero-title-sub {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero-description br {
+        display: none;
+    }
+
+    .credential {
+        justify-content: center;
+    }
+
+    .credential-year {
+        font-size: var(--font-size-xl);
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-content {
+        padding: var(--spacing-lg);
+    }
+
+    .feature-card,
+    .lifestyle-card {
+        text-align: left;
+    }
+
+    .sport-slalom {
+        padding: var(--spacing-xl);
+    }
+
+    .value-header {
+        padding: var(--spacing-lg);
+    }
+
+    .value-content {
+        padding: var(--spacing-lg);
+    }
+
+    .lifestyle-philosophy {
+        padding: var(--spacing-xl);
+    }
+
+    .philosophy-quote {
+        padding: var(--spacing-lg);
+    }
+
+    .card-content {
+        padding: var(--spacing-lg);
+    }
+
+    .gallery-content {
+        padding: var(--spacing-lg);
+    }
+
+    .contact-card {
+        padding: var(--spacing-lg);
+    }
+
+    .contact-cta {
+        padding: var(--spacing-xl);
+    }
+
+    .footer {
+        padding: var(--spacing-3xl) 0 var(--spacing-lg) 0;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+    :root {
+        --spacing-4xl: 2.5rem;
+        --spacing-3xl: 1.5rem;
+        --spacing-2xl: 1.25rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .hero-content {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .hero-title-main {
+        font-size: var(--font-size-xl);
+    }
+
+    .hero-title-sub {
+        font-size: var(--font-size-2xl);
+    }
+
+    .hero-description {
+        font-size: var(--font-size-sm);
+    }
+
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .profile-image {
+        max-width: 250px;
+    }
+
+    .timeline-content {
+        padding: var(--spacing-md);
+    }
+
+    .feature-card,
+    .value-content,
+    .card-content {
+        padding: var(--spacing-md);
+    }
+
+    .sport-slalom,
+    .lifestyle-philosophy,
+    .contact-cta {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+        min-height: 500px;
+    }
+
+    .hero-title-main {
+        font-size: var(--font-size-2xl);
+    }
+
+    .hero-title-sub {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero-description {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .hero-credentials {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .hero-cta {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .section-header {
+        margin-bottom: var(--spacing-xl);
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-image,
+    .profile-image,
+    .gallery-image,
+    .card-img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .scroll-arrow {
+        animation: none;
+    }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+    /* Dark mode styles would go here if needed */
+    /* Currently maintaining light theme as specified */
+}
+
+/* Print styles */
+@media print {
+    .nav,
+    .hero-scroll-indicator,
+    .cta-button,
+    .cta-btn {
+        display: none;
+    }
+
+    .hero {
+        height: auto;
+        page-break-after: always;
+    }
+
+    section {
+        page-break-inside: avoid;
+        padding: var(--spacing-lg) 0;
+    }
+
+    .timeline-item,
+    .feature-card,
+    .value-card,
+    .lifestyle-card {
+        page-break-inside: avoid;
+    }
+}
+
+/* Accessibility enhancements */
+@media (prefers-contrast: high) {
+    :root {
+        --text-medium: var(--text-dark);
+        --border-light: var(--text-medium);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: var(--ocean-blue-pale);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--border-radius-sm);
+    }
+
+    .timeline-badge,
+    .cta-button,
+    .cta-btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+@media (any-hover: none) {
+    .nav-link:focus,
+    .cta-button:focus,
+    .cta-btn:focus {
+        outline: 2px solid var(--ocean-blue-primary);
+        outline-offset: 2px;
+    }
+
+    .gallery-item:focus {
+        outline: 3px solid var(--ocean-blue-primary);
+        outline-offset: 3px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .cta-button,
+    .cta-btn,
+    .nav-link {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-toggle {
+        min-height: 44px;
+        min-width: 44px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .timeline-item:hover,
+    .feature-card:hover,
+    .value-card:hover,
+    .lifestyle-card:hover,
+    .gallery-item:hover {
+        transform: none;
+    }
+
+    .gallery-overlay {
+        opacity: 1;
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.6) 0%,
+            transparent 60%
+        );
+    }
+}
+
+/* Very wide screens */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .hero-title-main {
+        font-size: var(--font-size-6xl);
+    }
+
+    .hero-title-sub {
+        font-size: 4.5rem;
+    }
+}
